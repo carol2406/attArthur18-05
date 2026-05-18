@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="titulo">
+            <h1>☁️ Smart Home</h1>
+            <p>Controle inteligente da sua casa</p>
+        </div>
+
+        <div class="cards">
+
+            <!-- CASA -->
+            <div class="card">
+
+                <h2>🏠 Casa Inteligente</h2>
+
+                <form method="POST">
+
+                    <label>Presença na sala</label>
+                    <select name="presenca">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+
+                    <label>Temperatura</label>
+                    <input type="number" name="temperatura" placeholder="Digite a temperatura">
+
+                    <label>Está de noite?</label>
+                    <select name="noite">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+
+                    <button type="submit">
+                        Verificar Casa
+                    </button>
+
+                </form>
+
+                <div class="resultado">
+                    {{ resultado_casa|safe }}
+                </div>
+
+            </div>
+
+            <!-- PORTÃO -->
+            <div class="card">
+
+                <h2>🚘 Portão Inteligente</h2>
+
+                <form method="POST">
+
+                    <label>Morador reconhecido?</label>
+                    <select name="morador">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+
+                    <label>Carro próximo?</label>
+                    <select name="carro">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+
+                    <label>Horário permitido?</label>
+                    <select name="horario">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+
+                    <button type="submit">
+                        Verificar Portão
+                    </button>
+
+                </form>
+
+                <div class="resultado">
+                    {{ resultado_portao|safe }}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
