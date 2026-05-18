@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portão Inteligente</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🚘 Portão Inteligente</h1>
+            <p class="subtitulo">
+                Controle automático de acesso
+            </p>
+
+            <form method="POST">
+
+                <label>Morador reconhecido?</label>
+                <select name="morador">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <label>Carro próximo?</label>
+                <select name="carro">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <label>Horário permitido?</label>
+                <select name="horario">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <button type="submit">
+                    Verificar Portão
+                </button>
+
+            </form>
+
+            <div class="resultado">
+                {{ resultado|safe }}
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
